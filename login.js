@@ -15,7 +15,7 @@ form.addEventListener('submit', (e) => {
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             console.log("Login bem-sucedido:", userCredential.user);
-            window.location.href = "dashboard.html"; // Redireciona para dashboard.html
+            window.location.href = "dashboard.html"; // Redireciona para o painel
         })
         .catch((error) => {
             console.error("Erro de login:", error);
