@@ -1,7 +1,10 @@
-import { auth } from './firebase-config.js';
-import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js";
+import { app } from './firebase-config.js'; // Importa o app
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js";
 
-const form = document.getElementById('login-form');
+const auth = getAuth(app); // Inicializa o auth aqui
+
+// Resto do código de login (igual ao anterior)
+// ...
 const errorMessage = document.getElementById('error-message');
 
 form.addEventListener('submit', (e) => {
