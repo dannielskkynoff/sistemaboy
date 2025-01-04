@@ -1,5 +1,5 @@
 import { auth } from './firebase-config.js';
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js";
 
 const form = document.getElementById('login-form');
 const errorMessage = document.getElementById('error-message');
@@ -15,7 +15,7 @@ form.addEventListener('submit', (e) => {
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             console.log("Login bem-sucedido:", userCredential.user);
-            window.location.href = "dashboard.html"; // Redireciona para o painel
+            window.location.href = "dashboard.html";
         })
         .catch((error) => {
             console.error("Erro de login:", error);
