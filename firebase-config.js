@@ -1,7 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js";
 
-const firebaseConfig = {
+  const firebaseConfig = {
     apiKey: "AIzaSyCjDxtzK9ELCyxLNgmd0ZYDhB1o-bPLWr8",
     authDomain: "nuxpro-gestao-de-entregas.firebaseapp.com",
     projectId: "nuxpro-gestao-de-entregas",
@@ -12,6 +11,5 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 
-export { auth };
+export { app }; // Exporta apenas o app
