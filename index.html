@@ -3,20 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Painel do Logista</title>
+    <title>Login - Sistema de Gestão de Entregas</title>
     <link rel="stylesheet" href="login.css">
+    
+    <!-- Firebase SDK: Módulos -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js";
+
+        // Configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCjDxtzK9ELCyxLNgmd0ZYDhB1o-bPLWr8",
+            authDomain: "nuxpro-gestao-de-entregas.firebaseapp.com",
+            projectId: "nuxpro-gestao-de-entregas",
+            storageBucket: "nuxpro-gestao-de-entregas.appspot.com",
+            messagingSenderId: "483551326765",
+            appId: "1:483551326765:web:e77ef1e29d69f58efa7ea4",
+            measurementId: "G-FVR4EXZR93"
+        };
+
+        // Inicializa o Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Função de login
+        document.getElementById("login-form").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const errorMessageElement = document.getElementById("error-message");
+
+            // Limpa mensagens de erro anteriores
+            errorMessageElement.textContent = "";
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    console.log("Login bem-sucedido:", userCredential);
+                    window.location.href = "dashboard.html"; // Redireciona para o painel
+                })
+                .catch((error) => {
+                    console.error("Erro ao fazer login:", error);
+                    errorMessageElement.textContent = "Erro: " + error.message;
+                });
+        });
+    </script>
 </head>
 <body>
-    <div class="container-login">
-        <h2>Login</h2>
+    <div class="login-container">
+        <h1>Login</h1>
         <form id="login-form">
-            <input type="email" id="email" placeholder="Email" required><br><br>
-            <input type="password" id="password" placeholder="Senha" required><br><br>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Senha" required>
             <button type="submit">Entrar</button>
-            <div id="error-message"></div>
         </form>
+        <p id="error-message" class="error-message"></p>
     </div>
-    <script type="module" src="firebase-config.js"></script>
-    <script type="module" src="login.js"></script>
 </body>
 </html>
