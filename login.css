@@ -1,0 +1,48 @@
+/* ... outros estilos ... */
+
+.container-login {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.container-login h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #512da8;
+}
+
+.container-login input[type="email"],
+.container-login input[type="password"] {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.container-login button {
+    width: 100%;
+    padding: 10px;
+    background-color: #512da8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.container-login button:hover {
+    background-color: #311b92;
+}
+
+#error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}

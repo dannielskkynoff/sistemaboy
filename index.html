@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Painel do Logista</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+    <div class="container-login">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Email" required><br><br>
+            <input type="password" id="password" placeholder="Senha" required><br><br>
+            <button type="submit">Entrar</button>
+            <div id="error-message"></div>
+        </form>
+    </div>
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="login.js"></script>
+</body>
+</html>
