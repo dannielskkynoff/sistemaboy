@@ -12,8 +12,8 @@ const firebaseConfig = {
   projectId: "nuxpro-gestao-de-entregas",
   storageBucket: "nuxpro-gestao-de-entregas.firebasestorage.app",
   messagingSenderId: "483551326765",
-  appId: "1:483551326765:web:c208a1f41e93350bfa7ea4",
-  measurementId: "G-WT45ZZDVDV"
+  appId: "1:483551326765:web:e77ef1e29d69f58efa7ea4",
+  measurementId: "G-FVR4EXZR93"
 };
 
 // Initialize Firebase
