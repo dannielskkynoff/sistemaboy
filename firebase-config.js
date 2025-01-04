@@ -1,4 +1,4 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js";
+import * as firebase from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyCjDxtzK9ELCyxLNgmd0ZYDhB1o-bPLWr8",
@@ -10,6 +10,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
     measurementId: "G-FVR4EXZR93"
 };
 
-const app = initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig); // Acesso correto
 
-export { app }; // Exporta apenas o app
+export { app };
